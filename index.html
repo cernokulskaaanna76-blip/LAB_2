@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сервіс чергувань у лабораторії</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Сервіс чергувань у лабораторії (Варіант 11)</h1>
+
+    <div class="container">
+
+        <form id="shiftForm">
+            <h2>Форма чергування</h2>
+
+            <label>Date:</label>
+            <input type="date" id="date">
+            <span class="error" id="dateError"></span>
+
+            <label>TimeSlot:</label>
+            <select id="timeSlot">
+                <option value="">Оберіть</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+            </select>
+            <span class="error" id="timeError"></span>
+
+            <label>UserName:</label>
+            <input type="text" id="userName">
+            <span class="error" id="userError"></span>
+
+            <label>Comment:</label>
+            <textarea id="comment"></textarea>
+
+            <label>Status:</label>
+            <select id="status">
+                <option value="">Оберіть</option>
+                <option>Planned</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+            </select>
+            <span class="error" id="statusError"></span>
+
+            <button type="submit" id="saveBtn">Save</button>
+        </form>
+
+        <div class="list">
+            <h2>Список чергувань</h2>
+
+            <input type="text" id="searchInput" placeholder="Пошук за UserName">
+            <select id="filterStatus">
+                <option value="">Усі статуси</option>
+                <option>Planned</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+            </select>
+
+            <button id="sortBtn">Сортувати за датою</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>TimeSlot</th>
+                        <th>UserName</th>
+                        <th>Comment</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="shiftTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
