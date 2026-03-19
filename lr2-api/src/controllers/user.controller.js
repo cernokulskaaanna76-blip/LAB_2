@@ -5,7 +5,7 @@ const userService = require('../services/user.service');
 
 class UserController {
 
-    
+//Відсутність асінхронності, обробки помилок
     getAll(req, res) {
         const users = userService.getAllUsers();
         res.status(200).json(toUsersResponse(users));
@@ -30,5 +30,5 @@ class UserController {
         }
     }
 }
-
+//Тут зайвий символ після крапки з комою
 module.exports = new UserController();і
