@@ -1,10 +1,13 @@
+//По стандартам REST API не вистачає методів для оновлення, видалення по id та отримання детальної інформації по id сутності.
 const shiftService = require('../services/shift.service');
 
 class ShiftController {
+//Не вистачає асінхронності, обробки помилок
     getAll(req, res) {
         const shifts = shiftService.getAllShifts();
         res.json(shifts);
     }
+//Не вистачає асінхронності
     create(req, res) {
         try {
             const newShift = shiftService.addShift(req.body);
@@ -14,4 +17,5 @@ class ShiftController {
         }
     }
 }
+
 module.exports = new ShiftController();
