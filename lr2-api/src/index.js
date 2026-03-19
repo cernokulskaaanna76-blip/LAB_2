@@ -1,15 +1,26 @@
+//у index.js файлі повинна бути вхідна точка у твій додаток, все інше повинно бути у файлі app.js 
+//Зараз тут все що не дуже добре.
+//Приклад:
+// const app = require('./app');
+
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
 const express = require('express');
 const cors = require('cors');
+//Відсутні пакети безпеки(helmet, cors) та їх використання
 
 const userRoutes = require('./routes/user.routes');
 const shiftRoutes = require('./routes/shift.routes');
 const swapRoutes = require('./routes/swap.routes');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3000;  // захардкодений порт серверу, краще винести у env файл такі речі
 
 app.use(cors());
 app.use(express.json());
+//не вистачає app.use(express.urlencoded({ extended: true }));
 
 
 app.use((req, res, next) => {
